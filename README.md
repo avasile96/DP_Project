@@ -7,4 +7,6 @@ https://www.youtube.com/results?search_query=how+to+build+a+website+with+html+cs
 
 https://www.youtube.com/watch?v=-56x56UppqQ ---> MongoDB Crash Course
 	https://gist.github.com/bradtraversy/f407d642bdc3b31681bc7e56d95485b6  ---> MongoDB Cheat Sheet
+	https://docs.mongodb.com/manual/administration/install-community/ ---> Link to the manual to install MongoDB
+	https://docs.mongodb.com/compass/master/install/ ----> link to install a GUI for MongoDB (if you want)
 
