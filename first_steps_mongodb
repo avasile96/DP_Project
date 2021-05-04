@@ -1,0 +1,26 @@
+Steps to start mongoDB
+
+If you are unsure which init system your platform uses, run the following command:
+	ps --no-headers -o comm 1
+
+You can start the mongod process by issuing the following command:
+	sudo systemctl start mongod
+	
+If failed, run:
+	sudo systemctl daemon-reload
+	
+Verify that MongoDB has started successfully:
+	sudo systemctl status mongod
+	
+You can optionally ensure that MongoDB will start following a system reboot by issuing the following command:
+	sudo systemctl enable mongod
+
+Stop MongoDB:
+	sudo systemctl stop mongod
+
+Restart MongoDB:
+	sudo systemctl restart mongod
+
+Begin using MongoDB:
+	mongo
+
