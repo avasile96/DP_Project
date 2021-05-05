@@ -11,9 +11,6 @@ If failed, run:
 	
 Verify that MongoDB has started successfully:
 	sudo systemctl status mongod
-	
-You can optionally ensure that MongoDB will start following a system reboot by issuing the following command:
-	sudo systemctl enable mongod
 
 Stop MongoDB:
 	sudo systemctl stop mongod
@@ -23,4 +20,14 @@ Restart MongoDB:
 
 Begin using MongoDB:
 	mongo
+	
+	
+	
+You can optionally ensure that MongoDB will start following a system reboot by issuing the following command:
+	sudo systemctl enable mongod
+
+/media/manuel/HD_MOJEDA/DISCO_DURO/Mixto/Subjects/Programming_Networking/Project/MongoDB/DB_Mongo/mongodb
+
+/media/manuel/HD_MOJEDA/DISCO_DURO/Mixto/Subjects/Programming_Networking/Project/MongoDB/log_mongo/mongod.log
+
 
