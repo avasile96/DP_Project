@@ -15,3 +15,6 @@ https://www.mongodb.com/nodejs-database ---> Using a Database with Node.js
 	https://docs.mongodb.com/drivers/node/fundamentals/connection/ --> Connection Guide
 	https://www.geeksforgeeks.org/how-to-connect-mongodb-server-with-node-js/ ---> How to connect mongodb Server with Node.js ?
 	https://www.tutorialsteacher.com/nodejs/access-mongodb-in-nodejs --> Access MongoDB in Node.js
+	
+https://docs.atlas.mongodb.com    ----->>>> VERY IMPORTANT TO MAKE MONGODB WORKS WITH PYCHARM
+	
