@@ -1,3 +1,4 @@
+@import url('modal.css');
 * {
     box-sizing: border-box;
     margin: 0;
@@ -86,7 +87,8 @@
     border-radius: 4px;
     background: #833ab4;
     background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
-    background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
+    /*background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4); */
+    background: linear-gradient(to right, #59C173, #11FFBD, #a17fe0);
     color: #fff;
     transition: all 0.3s ease;
 }
@@ -227,6 +229,7 @@
             #ff6a00,
             #ee0979
     ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    /*The next lines add color/gradient to the text */
     background-size: 100%;
     -webkit-background-clip: text;
     -moz-background-clip: text;
