@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MedBase</title>
+    <title>MedBase - Homepage | MedBase</title>
     <link rel="stylesheet" href="styles_alex.css" />
     <link
             rel="stylesheet"
@@ -11,6 +11,7 @@
             integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
             crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="../styles_alex.css">
 </head>
 <body>
 <!-- Navbar Section -->
@@ -29,7 +30,7 @@
                 <a href="#about" class="navbar__links" id="about-page">About</a>
             </li>
             <li class="navbar__btn">
-                <a href="#sign-up" class="button" id="signup">Sign Up</a>
+                <a href="#signup" class="button" id="sign-up-btn">Log In</a>
             </li>
         </ul>
     </div>
@@ -38,8 +39,8 @@
 <!-- Hero Section -->
 <div class="hero" id="home">
     <div class="hero__container">
-        <h1 class="hero__heading">Choose your <span>colors</span></h1>
-        <p class="hero__description">Unlimited Possibilities</p>
+        <h1 class="hero__heading">Saving lives <span>one byte </span>at a time</h1>
+        <p class="hero__description">World's First Centralized Medical Database</p>
         <button class="main__btn"><a href="#">Explore</a></button>
     </div>
 </div>
@@ -51,54 +52,38 @@
             <div class="main__img--card"><i class="fas fa-layer-group"></i></div>
         </div>
         <div class="main__content">
-            <h1>What do we do?</h1>
-            <h2>We help businesses scale</h2>
-            <p>Schedule a call to learn more about our services</p>
-            <button class="main__btn"><a href="#">Schedule Call</a></button>
+            <h1>How it works?</h1>
+            <h2>Share your medical data anonymously</h2>
+            <p>And help save lives by providing teams of researchers all over
+            the world with enough data to study complex diseases.</p>
+            <button class="main__btn"><a href="#">Find out more!</a></button>
         </div>
     </div>
 </div>
 
-<!-- Services Section -->
-<div class="services" id="services">
-    <h1>Our Services</h1>
-    <div class="services__wrapper">
-        <div class="services__card">
-            <h2>Custom Colorways</h2>
-            <p>AI Powered technology</p>
-            <div class="services__btn"><button>Get Started</button></div>
+<!-- sign-up Section -->
+<div class="signup" id="signup">
+    <h1>WHO ARE YOU?</h1>
+    <div class="signup__wrapper">
+        <div class="signup__card">
+            <h2>Medical Doctor</h2>
+            <p>Help save more lives!</p>
+            <div class="signup__btn"><button>Sign Up</button></div>
         </div>
-        <div class="services__card">
-            <h2>Are you Ready?</h2>
-            <p>Take the lepa</p>
-            <div class="services__btn"><button>Get Started</button></div>
+        <div class="signup__card">
+            <h2>Patient</h2>
+            <p>Share your history!</p>
+            <div class="signup__btn"><button>Sign Up</button></div>
         </div>
-        <div class="services__card">
-            <h2>Full Gradients</h2>
-            <p>100 Combinations</p>
-            <div class="services__btn"><button>Get Started</button></div>
+        <div class="signup__card">
+            <h2>Researcher</h2>
+            <p>Get access to data!</p>
+            <div class="signup__btn"><button>Sign Up</button></div>
         </div>
-        <div class="services__card">
-            <h2>Infinite Choices</h2>
-            <p>1000's of colors</p>
-            <div class="services__btn"><button>Get Started</button></div>
-        </div>
-    </div>
-</div>
-
-<!-- Features Section -->
-<div class="main" id="sign-up">
-    <div class="main__container">
-        <div class="main__content">
-            <h1>Join Our Team</h1>
-            <h2>Sign Up Today</h2>
-            <p>See what makes us different</p>
-            <button class="main__btn"><a href="#">Sign Up</a></button>
-        </div>
-        <div class="main__img--container">
-            <div class="main__img--card" id="card-2">
-                <i class="fas fa-users"></i>
-            </div>
+        <div class="signup__card">
+            <h2>Health Institution</h2>
+            <p>Let's collaborate!</p>
+            <div class="signup__btn"><button>Sign Up</button></div>
         </div>
     </div>
 </div>
@@ -115,34 +100,33 @@
             <div class="footer__link--items">
                 <h2>Contact Us</h2>
                 <a href="/">Contact</a> <a href="/">Support</a>
-                <a href="/">Destinations</a>
+                <a href="/">Legal</a>
             </div>
         </div>
         <div class="footer__link--wrapper">
             <div class="footer__link--items">
-                <h2>Videos</h2>
-                <a href="/">Submit Video</a> <a href="/">Ambassadors</a>
-                <a href="/">Agency</a>
+                <h2>Personal Space</h2>
+                <a href="/">Medical Doctor</a>
+                <a href="/">Patient</a>
+                <a href="/">Researcher</a>
+                <a href="/">Medical Institution</a>
             </div>
             <div class="footer__link--items">
-                <h2>Social Media</h2>
-                <a href="/">Instagram</a> <a href="/">Facebook</a>
-                <a href="/">Youtube</a> <a href="/">Twitter</a>
+                <h2>Donate</h2>
+                <a href="/">Credit Card</a> <a href="/">Debit Card</a>
+                <a href="/">Crypto</a> 
             </div>
         </div>
     </div>
     <section class="social__media">
         <div class="social__media--wrap">
             <div class="footer__logo">
-                <a href="/" id="footer__logo">COLOR</a>
+                <a href="/" id="footer__logo">MedBase</a>
             </div>
-            <p class="website__rights">© COLOR 2020. All rights reserved</p>
+            <p class="website__rights">© MedBase 2021. All rights reserved</p>
             <div class="social__icons">
                 <a href="/" class="social__icon--link" target="_blank"
                 ><i class="fab fa-facebook"></i
-                ></a>
-                <a href="/" class="social__icon--link"
-                ><i class="fab fa-instagram"></i
                 ></a>
                 <a href="/" class="social__icon--link"
                 ><i class="fab fa-youtube"></i
