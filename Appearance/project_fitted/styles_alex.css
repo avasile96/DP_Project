@@ -44,6 +44,25 @@
     font-size: 2rem;
 }
 
+.navbar__logo span {
+    background: #2af598; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+            to right,
+            #2af598,
+            #009efd
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+            to right,
+            #2af598,
+            #009efd
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: border;
+    -webkit-text-fill-color: transparent;
+    -mo-text-fill-color: transparent;
+}
+
 
 .navbar__menu {
     display: flex;
