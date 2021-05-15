@@ -36,7 +36,6 @@
     -webkit-background-clip: text;
     -moz-background-clip: border;
     -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent;
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -44,23 +43,12 @@
     font-size: 2rem;
 }
 
-.navbar__logo span {
-    background: #2af598; /* fallback for old browsers */
-    background: -webkit-linear-gradient(
-            to right,
-            #2af598,
-            #009efd
-    ); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(
-            to right,
-            #2af598,
-            #009efd
-    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+.navbar__container span {
+    background: #2fffc5; /* fallback for old browsers */
     background-size: 100%;
     -webkit-background-clip: text;
     -moz-background-clip: border;
     -webkit-text-fill-color: transparent;
-    -mo-text-fill-color: transparent;
 }
 
 
@@ -94,8 +82,7 @@
 }
 
 #sign-up-btn:hover {
-    color: #2af598;
-    transition: all 0.3s ease;
+    display: flex;
 }
 
 .navbar__login_menu {
@@ -119,6 +106,20 @@
     background: linear-gradient(to right, #2af598, #1A2980  100%);
     color: #fff;
     transition: all 0.3s ease;
+}
+
+.button-card{
+    color: #fff;
+    background: #131313;
+    width: 40%;
+    height:13%;
+}
+
+.button:hover {
+    color: #2af598;
+    transition: all 0.3s ease;
+    transform: scale(1.020);
+    cursor: pointer;
 }
 
 .navbar__links:hover {
@@ -261,7 +262,6 @@
     -webkit-background-clip: text;
     -moz-background-clip: border;
     -webkit-text-fill-color: transparent;
-    -mo-text-fill-color: transparent;
 }
 
 .hero__description {
@@ -281,7 +281,6 @@
     -webkit-background-clip: text;
     -moz-background-clip: border;
     -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent;
 }
 
 .highlight {
@@ -329,7 +328,6 @@
     -webkit-background-clip: text;
     -moz-background-clip: border;
     -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent;
     text-transform: uppercase;
     margin-bottom: 32px;
 }
@@ -351,7 +349,6 @@
     -webkit-background-clip: text;
     -moz-background-clip: border;
     -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent;
 }
 
 .main__content p {
@@ -522,7 +519,6 @@
     -webkit-background-clip: text;
     -moz-background-clip: border;
     -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent;
     margin-bottom: 5rem;
     font-size: 2.5rem;
 }
@@ -533,7 +529,15 @@
     grid-template-rows: 1fr;
 }
 
+.signup__wrapper button {
+    color: #2af598;
+    transition: all 0.3s ease;
+    transform: scale(1.075);
+    cursor: pointer;
+}
+
 .signup__card {
+    align-items: center;
     margin: 10px;
     height: 425px;
     width: 300px;
@@ -579,6 +583,7 @@
 .signup__card p {
     text-align: center;
     margin-top: 24px;
+    margin-bottom: 5rem;
     font-size: 20px;
 }
 
@@ -735,4 +740,158 @@
         padding: 10px;
         width: 100%;
     }
+}
+
+/*##################### FORM ######################*/
+
+.form {
+    background-color: #131313;
+    padding: 10rem 0;
+}
+
+.form__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    height: 90%;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    padding: 0 50px;
+}
+
+.form__content {
+    color: #fff;
+    width: 100%;
+}
+
+.form__content h1 {
+    background-color: #efff1f;
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: border;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1.5rem;
+    font-size: 5rem;
+}
+
+.form__content h2 {
+    font-size: 4rem;
+    background: #ccf036; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+            to right,
+            #009efd,
+            #2af598
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+            to right,
+            #009efd,
+            #2af598
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: border;
+    -webkit-text-fill-color: transparent;
+}
+
+.form__content p {
+    margin-top: 1rem;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.form__content a {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 20px;
+}
+
+.form__btn {
+    font-size: 1.8rem;
+    background: #2af598;
+    background: linear-gradient(to right, #1fa2ff 0%, #2af598  51%, #1fa2ff  100%);
+    padding: 20px 60px;
+    border: none;
+    border-radius: 4px;
+    margin-top: 2rem;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.35s;
+    outline: none;
+}
+
+.btn-grad:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+}
+
+.form__btn a {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    text-decoration: none;
+}
+
+.form__btn:after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #ccf036;
+    transition: all 0.35s;
+    border-radius: 4px;
+}
+
+.form__btn:hover {
+    color: #fff;
+}
+
+.form__btn:hover:after {
+    width: 100%;
+}
+
+.form__img--container {
+    text-align: center;
+}
+
+.form__img--card {
+    margin: 10px;
+    height: 500px;
+    width: 500px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    background-image: linear-gradient(to right, #00dbde 0%, #ccf036 100%);
+}
+
+.form__input100 {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#su_button {
+    width: 25%;
+    margin-top: 0;
+}
+#su_button:hover {
+    color: #2af598;
+    transition: all 0.3s ease;
+    transform: scale(1.020);
+    cursor: pointer;
+}
+
+.txt2 {
+    color: #2af598;
 }

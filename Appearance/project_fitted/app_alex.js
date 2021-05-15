@@ -51,3 +51,7 @@ const hideMobileMenu = () => {
 
 menuLinks.addEventListener('click', hideMobileMenu);
 navLogo.addEventListener('click', hideMobileMenu);
+
+$(document).on("click", ".navbar-right .dropdown-menu", function(e){
+    e.stopPropagation();
+});
