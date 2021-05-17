@@ -1,0 +1,59 @@
+FIELDS FOR PATIENT:
+
+Name
+Last Name
+Nationality
+E-mail
+Password
+Address
+phone number
+Emergency contact
+
+Previous illness
+drug allergies
+weight
+height
+healthy habits / unhealthy habits (list of how often of the next subjects)
+	Exercise
+	Eating following a diet
+	Alcohol Consumption
+	Caffeine Consumption
+	Do you smoke?
+
+Doctor's name
+Hospital's name
+Include other comments regarding your Medical History
+
+
+FIELDS FOR DOCTOR:
+
+Name
+Last Name
+Nationality
+Institutional E-mail
+Password
+Address
+phone number
+Medical license number
+
+Hospital's name
+Degree
+Speciality (if applies)
+Job title
+
+
+FIELDS FOR RESEARCHER:
+
+Name
+Last Name
+Nationality
+Institutional E-mail
+Password
+
+Institution's name
+Degree
+Job title
+Research area
+Purposes of the research ongoing 
+Kind of file to download (excel, csv, .dat, etc)
+
