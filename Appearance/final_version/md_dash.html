@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,20 +12,163 @@
             integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
             crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="../../../startbootstrap-sb-admin-2-gh-pages/scss/_mixins.scss">
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <!-- Histogram Chart -->
+    <script type="text/javascript">
+        google.charts.load("current", {packages:["corechart"]});
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Name', 'SpO2'],
+                ['Acrocanthosaurus (top-spined lizard)', 12.2],
+                ['Albertosaurus (Alberta lizard)', 9.1],
+                ['Allosaurus (other lizard)', 12.2],
+                ['Apatosaurus (deceptive lizard)', 22.9],
+                ['Archaeopteryx (ancient wing)', 0.9],
+                ['Argentinosaurus (Argentina lizard)', 36.6],
+                ['Baryonyx (heavy claws)', 9.1],
+                ['Brachiosaurus (arm lizard)', 30.5],
+                ['Ceratosaurus (horned lizard)', 6.1],
+                ['Coelophysis (hollow form)', 2.7],
+                ['Compsognathus (elegant jaw)', 0.9],
+                ['Deinonychus (terrible claw)', 2.7],
+                ['Diplodocus (double beam)', 27.1],
+                ['Dromicelomimus (emu mimic)', 3.4],
+                ['Gallimimus (fowl mimic)', 5.5],
+                ['Mamenchisaurus (Mamenchi lizard)', 21.0],
+                ['Megalosaurus (big lizard)', 7.9],
+                ['Microvenator (small hunter)', 1.2],
+                ['Ornithomimus (bird mimic)', 4.6],
+                ['Oviraptor (egg robber)', 1.5],
+                ['Plateosaurus (flat lizard)', 7.9],
+                ['Sauronithoides (narrow-clawed lizard)', 2.0],
+                ['Seismosaurus (tremor lizard)', 45.7],
+                ['Spinosaurus (spiny lizard)', 12.2],
+                ['Supersaurus (super lizard)', 30.5],
+                ['Tyrannosaurus (tyrant lizard)', 15.2],
+                ['Ultrasaurus (ultra lizard)', 30.5],
+                ['Velociraptor (swift robber)', 1.8]]);
+
+            var options = {
+                title: 'Number of Patients by Age (and SpO2 count)',
+                legend: { position: 'none' },
+                backgroundColor: '#131313',
+                colors:['#efff1f'],
+                titleTextStyle: {color: '#efff1f'},
+                hAxis:
+                    {
+                        baselineColor: '#131313',
+                        textStyle: {color: '#efff1f'}
+                    },
+                vAxis:
+                    {
+                        baselineColor: '#2af598',
+                        gridlines: {color: '#2af598'},
+                        textStyle: {color: '#efff1f'}
+                    }
+            };
+
+            var chart = new google.visualization.Histogram(document.getElementById('chart_div'));
+            chart.draw(data, options);
+        }
+    </script>
+    <!-- Line Chart -->
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Year', 'Male', 'Female', 'Other'],
+                ['2014',  1000,      400,   50],
+                ['2015',  1170,      460,   200],
+                ['2016',  660,       1120,  500],
+                ['2017',  1030,      540,   1000]
+            ]);
+
+            var options = {
+                title: 'Patient Gender',
+                titleTextStyle: {color: '#efff1f'},
+                curveType: 'function',
+                legend: { position: 'bottom' },
+                backgroundColor: '#131313',
+                legendTextStyle: {color: '#efff1f'},
+                hAxis:
+                    {
+                        baselineColor: '#2af598',
+                        /*                        gridlines: {color: '#2af598'}*/
+                        textStyle: {color: '#efff1f'}
+                    },
+                vAxis:
+                    {
+                        baselineColor: '#2af598',
+                        gridlines: {color: '#2af598'},
+                        textStyle: {color: '#efff1f'}
+                    }
+            };
+
+            var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+            chart.draw(data, options);
+        }
+    </script>
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+            var data = google.visualization.arrayToDataTable([
+                ['Task', 'Hours per Day'],
+                ['Heart Disease',     11],
+                ['Diabetes',      2],
+                ['Kidney Disease',  2],
+                ['Neonatal conditions', 2],
+                ['Pulmonary Disease',    7]
+            ]);
+
+            var options = {
+                title: 'Main Case Areas',
+                titleTextStyle: {color: '#efff1f'},
+                curveType: 'function',
+                legend: { position: 'bottom' },
+                pieSliceBorderColor: '#131313',
+                backgroundColor: '#131313',
+                legendTextStyle: {color: '#efff1f'},
+                hAxis:
+                    {
+                        baselineColor: '#2af598',
+                        /*                        gridlines: {color: '#2af598'}*/
+                        textStyle: {color: '#efff1f'}
+                    },
+                vAxis:
+                    {
+                        baselineColor: '#2af598',
+                        gridlines: {color: '#2af598'},
+                        textStyle: {color: '#efff1f'}
+                    }
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+            chart.draw(data, options);
+        }
+    </script>
+
 </head>
 <body>
 <!-- Navbar Section -->
 <nav class="navbar">
     <div class="navbar__container">
-        <a href="#home" id="navbar__logo">Med<span id="logo__span">Base</span></a>
+        <a href="index_alex.html" id="navbar__logo">Med<span id="logo__span">Base</span></a>
         <div class="navbar__toggle" id="mobile-menu">
             <span class="bar"></span> <span class="bar"></span>
             <span class="bar"></span>
         </div>
         <ul class="navbar__menu">
             <li class="navbar__item">
-                <a href="#home" class="navbar__links" id="home-page">Home</a>
+                <a href="index_alex.html" class="navbar__links" id="home-page">Home</a>
             </li>
             <li class="navbar__item">
                 <a href="#about" class="navbar__links" id="about-page">About</a>
@@ -37,24 +181,25 @@
 </nav>
 
 <!-- About Section -->
-<div class="dashMain" id="about">
-    <div class="dashMain__container">
-        <div class="dashMain__img--container">
-            <div class="dashMain__img--card"><i class="fas fa-layer-group"></i></div>
+<div class="main" id="about">
+    <div class="main__container">
+<!--        <div class="main__img&#45;&#45;container">
+            <div class="main__img&#45;&#45;card"><i class="fas fa-layer-group"></i></div>
+        </div>-->
+        <div class="main__content">
+            <div id="curve_chart" style="width: 900px; height: 30rem;"></div>
         </div>
-        <div class="dashMain__content">
-            <h1>How it works?</h1>
-            <h2>Share medical data anonymously</h2>
-            <p>And help save lives by providing teams of researchers all over
-                the world with enough data to study complex diseases</p>
-            <button class="dashMain__btn"><a href="#">Find out more!</a></button>
+        <div class="main__content">
+            <div id="piechart" style="width: 900px; height: 30rem;"></div>
         </div>
-        <div class="dashMain__content">
-            <h1>How it works?</h1>
-            <h2>Share medical data anonymously</h2>
-            <p>And help save lives by providing teams of researchers all over
-                the world with enough data to study complex diseases</p>
-            <button class="dashMain__btn"><a href="#">Find out more!</a></button>
+        <div class="main__content">
+            <div id="chart_div" style="width: 900px; height: 30rem;"></div>
+        </div>
+        <div class="main__content">
+            <h2>Register a Patient</h2>
+            <p>This information is anonymous and in strict concordance with
+            doctor-patient confidentiality laws and regulations</p>
+            <button class="main__btn"><a href="#">Register a Patient</a></button>
         </div>
     </div>
 </div>
