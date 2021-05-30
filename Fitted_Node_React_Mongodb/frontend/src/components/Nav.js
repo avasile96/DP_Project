@@ -3,15 +3,24 @@ import {Link} from 'react-router-dom';
 
 function Nav() {
     return(
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark top">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navMainMenu" aria-controls="navMainMenu" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div id="navMainMenu" class="navbar-collapse collapse">
-                <div class="navbar-nav ml-auto">
-                    <Link to='/' className="nav-item nav-link active">Home</Link>
-                    <Link to='/tweets' className="nav-item nav-link">Tweets</Link>
+        <nav className="navbar">
+            <div className="navbar__container">
+                <a id="navbar__logo">Med<span id="logo__span">Base</span></a>
+                <div className="navbar__toggle" id="mobile-menu">
+                    <span className="bar"></span> <span className="bar"></span>
+                    <span className="bar"></span>
                 </div>
+                <ul className="navbar__menu">
+                    <li className="navbar__item">
+                        <a href="index_alex.html" className="navbar__links" id="home-page">Home</a>
+                    </li>
+                    <li className="navbar__item">
+                        <a href="#form" className="navbar__links" id="about-page">About</a>
+                    </li>
+                    <li className="navbar__btn">
+                        <a href="#signup" className="button" id="sign-up-btn">Join</a>
+                    </li>
+                </ul>
             </div>
         </nav>
     );
