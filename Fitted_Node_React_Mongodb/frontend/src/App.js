@@ -1,8 +1,8 @@
 //import logo from './logo.svg';
 import './App.css';
 import Nav from './components/Nav';
-import Home from './components/Home';
-import Tweet from './components/Tweet';
+import Form from './components/Form';
+import Footer from './components/Footer';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 function App() {
@@ -10,10 +10,8 @@ function App() {
         <Router>
             <div className="App">
                 <Nav />
-                <Switch>
-                    <Route path="/" exact component={Home} />
-                    <Route path="/tweets" exact component={Tweet} />
-                </Switch>
+                <Form />
+                <Footer />
             </div>
         </Router>
     );
