@@ -19,19 +19,44 @@ router.get('/addUser', async (req, res) => {
 });*/
 
 
-router.get('/tweets', (req, res) => {
-    const str = [
-        {
-            "name": "Alex",
-            "msg": "This is my first tweet!",
-            "username": "avasile"
-        },
-    ];
-    res.end(JSON.stringify(str));
+router.get('/tweets', async (req, res) => {
+    const tweets = Schemas.Tweets;
+
+    // this code will get all tweets
+    //const userTweets = await tweets.find({}, (err, tweetData) => {
+
+    // this code will get all tweets and join the user table
+    const userTweets = await tweets.find({}).populate("user").exec((err, tweetData) => {
+        if (err) throw err;
+        if (tweetData) {
+            res.end(JSON.stringify(tweetData));
+        } else {
+            res.end();
+        }
+    });
 });
 
-router.post('/addTweet', (req, res) => {
-    res.end('NA');
+router.post('/addTweet', async (req, res) => {
+    const userTweet = req.body.tweetInput;
+    const user = Schemas.Users;
+    const userId = await user.findOne({username:'eaglefang'}).exec();
+
+    const newTweet = new Schemas.Tweets({
+        tweet: userTweet,
+        user: userId._id
+    });
+
+    try {
+        await newTweet.save( (err, newTweetResults) => {
+            if (err) res.end('Error Saving.');
+            res.redirect('/tweets');
+            res.end();
+        });
+    } catch(err) {
+        console.log(err);
+        res.redirect('/tweets');
+        res.end();
+    }
 });
 
 module.exports = router;
