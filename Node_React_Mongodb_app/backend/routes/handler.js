@@ -39,7 +39,7 @@ router.get('/tweets', async (req, res) => {
 router.post('/addTweet', async (req, res) => {
     const userTweet = req.body.tweetInput;
     const user = Schemas.Users;
-    const userId = await user.findOne({username:'eaglefang'}).exec();
+    const userId = await user.findOne({username:'akir'}).exec();
 
     const newTweet = new Schemas.Tweets({
         tweet: userTweet,
