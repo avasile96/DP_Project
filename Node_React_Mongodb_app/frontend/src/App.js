@@ -3,7 +3,12 @@ import './App.css';
 import Nav from './components/Nav';
 import Home from './components/Home';
 import Tweet from './components/Tweet';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import {BrowserRouter as Router,
+    Switch,
+    Route,
+    Link,
+    Redirect
+} from 'react-router-dom';
 
 function App() {
     return (

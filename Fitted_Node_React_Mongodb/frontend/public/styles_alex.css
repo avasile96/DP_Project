@@ -6,9 +6,12 @@
     scroll-behavior: smooth;
 }
 
+.html {
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
 .navbar {
     background: #131313;
-    height: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,8 +21,55 @@
     z-index: 999;
 }
 
-.navbar__container {
+#navbarDropdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding: 10px 20px;
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    background: #ccf036;
+    background: linear-gradient(to right, #2af598, #1A2980  100%);
+    color: #fff;
+    transition: all 0.3s ease;
+}
 
+.btn {
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    background: #ccf036;
+    background: linear-gradient(to right, #2af598, #1A2980  100%);
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transition: all 0.3s ease;
+    transform: scale(1.020);
+    cursor: pointer;
+}
+
+#navbarDropdown:hover {
+    color: #2af598;
+    transition: all 0.3s ease;
+    transform: scale(1.020);
+    cursor: pointer;
+}
+
+.dropdown-menu-end {
+    color: #ffffff;
+}
+
+.dropdown-item {
+    color: #fff;
+}
+
+.navbar__container {
     display: flex;
     justify-content: space-between;
     height: 80px;
@@ -31,16 +81,15 @@
 }
 
 #navbar__logo {
-    background: #ffffff;
-    background-size: 100%;
-    -webkit-background-clip: text;
-    -moz-background-clip: border;
-    -webkit-text-fill-color: transparent;
     display: flex;
     align-items: center;
     cursor: pointer;
     text-decoration: none;
     font-size: 2rem;
+}
+
+#logo__span {
+    color: #2fffc5;
 }
 
 .navbar__container span {
@@ -745,8 +794,8 @@
 /*##################### FORM ######################*/
 
 .form {
-    background-color: #131313;
-    padding: 10rem 0;
+    background: #131313;
+    padding: 5rem;
 }
 
 .form__container {
@@ -895,4 +944,34 @@
 
 .txt2 {
     color: #2af598;
+}
+
+.display-1 {
+    font-family: 'Kumbh Sans', sans-serif;
+    background-color: #efff1f;
+    -webkit-background-clip: text;
+    -moz-background-clip: border;
+    -webkit-text-fill-color: transparent;
+}
+
+.form-label {
+    color: #fff;
+    font-weight: 700;
+    font-size: xx-large;
+}
+
+.figure {
+    margin: 10px;
+    height: 500px;
+    width: 500px;
+    border-radius: 4px;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    background-image: linear-gradient(to right, #00dbde 0%, #ccf036 100%);
+}
+
+.mb-3 {
+    text-align: left;
 }
