@@ -6,9 +6,9 @@ function Nav() {
     return(
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <div className="container-fluid">
-                <a className="navbar-brand" id="navbar__logo" href="#">
-                    Med<span id="logo__span">Base</span>
-                </a>
+                    <Link className="navbar-brand" id="navbar__logo" to="/">
+                        Med<span id="logo__span">Base</span>
+                    </Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -31,7 +31,7 @@ function Nav() {
                             </a>
                             <ul className="dropdown-menu dropdown-menu-end bg-dark" aria-labelledby="navbarDropdown">
                                 <li><a className="dropdown-item" href="#">Log In</a></li>
-                                <li><a className="dropdown-item" href="#">Register</a></li>
+                                <li><Link className="dropdown-item" to="/Registration">Register</Link></li>
                                 <li>
                                     <hr className="dropdown-divider"></hr>
                                 </li>

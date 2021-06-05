@@ -1,22 +1,28 @@
-//import logo from './logo.svg';
+import React, { Component } from "react";
 import './App.css';
-import Nav from './components/Nav';
-import Form from './components/Form';
-import Form_b from './components/Form_b';
-import Footer from './components/Footer';
-import Nav_b from './components/Nav_b';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Switch, Route, Link, Redirect} from 'react-router-dom';
 
-function App() {
-    return (
-        <Router>
-            <div className="App">
-                <Nav_b />
-                <Form_b />
-                <Footer />
-            </div>
-        </Router>
-    );
+//Pages
+import MainPage from "./pages";
+import NotFoundPage from "./pages/404";
+import UsersPage from "./pages/users";
+import reg from "./pages/Registration"
+
+class App extends Component {
+    render() {
+        return (
+            <Router>
+                <Switch>
+                    <Route exact path="/" component={MainPage}/>
+                    <Route exect path="/404" component={NotFoundPage}/>
+                    <Route exact path="/users" component ={UsersPage}/>
+                    <Route exact path="/registration" component ={reg}/>
+                    <Redirect to="/404"/>
+                </Switch>
+            </Router>
+        )
+    }
 }
 
 export default App;
+
