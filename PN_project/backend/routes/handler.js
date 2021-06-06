@@ -61,23 +61,31 @@ router.post('/Registration', async (req, res) => {
     const newUserName = req.body.username;
     const password = req.body.pass;
     const fieldThird = req.body.license;
+    const userCheck = Schemas.LoginUser;
+
+    const checkUser = await userCheck.findOne({name:newUserName, password:password}).exec();
 
     const newUser = new Schemas.NewUser({
         name: newUserName,
         password: password,
         thirdField: fieldThird
     });
-
-    try {
-        await newUser.save( (err, newUserResults) => {
-            if (err) res.end('Error saving.');
-            res.redirect('/login');
-            res.end();
-        });
-    } catch (err) {
-        console.log(err)
-        res.redirect('/');
-        res.end('User not added.');
+    console.log(checkUser)
+    if (checkUser === null) {
+        try {
+            await newUser.save((err, newUserResults) => {
+                if (err) res.end('Error saving.');
+                res.redirect('/login');
+                res.end();
+            });
+        } catch (err) {
+            console.log(err)
+            res.redirect('/');
+            res.end('User not added.');
+        }
+    } else {
+        res.redirect('/login');
+        res.end();
     }
 });
 
