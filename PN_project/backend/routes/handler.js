@@ -70,7 +70,6 @@ router.post('/Registration', async (req, res) => {
         password: password,
         thirdField: fieldThird
     });
-    console.log(checkUser)
     if (checkUser === null) {
         try {
             await newUser.save((err, newUserResults) => {
