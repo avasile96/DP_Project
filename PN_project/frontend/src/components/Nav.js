@@ -1,16 +1,44 @@
-import React from 'react'; // ES6 react
+import React from 'react'; // ES6 js
 import {Link} from 'react-router-dom';
 
-function Nav(){
+
+function Nav() {
     return(
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark top">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navMainMenu" aria-controls="navMainMenu" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div id="navMainMenu" class="navbar-collapse collapse">
-                <div class="navbar-nav ml-auto">
-                    <Link to='/' className="nav-item nav-link active">Home</Link>
-                    <Link to='/tweets' className="nav-item nav-link">Tweets</Link>
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div className="container-fluid">
+                <Link className="navbar-brand" id="navbar__logo" to="/">
+                    Med<span id="logo__span">Base</span>
+                </Link>
+                <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"/>
+                </button>
+                <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul className="navbar-nav me-auto mb-2 mb-lg-0 ms-auto">
+                        <li className="nav-item">
+                            <Link className="nav-link active" aria-current="page" to="/">Home</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/abtUs">About Us</Link>
+                        </li>
+                    </ul>
+                    <ul className="navbar-nav">
+                        <li className="nav-item dropdown">
+                            <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                               data-bs-toggle="dropdown" aria-expanded="false">
+                                Join
+                            </a>
+                            <ul className="dropdown-menu dropdown-menu-end bg-dark" aria-labelledby="navbarDropdown">
+                                <li><Link className="dropdown-item" to = "/login">Log In</Link></li>
+                                <li><Link className="dropdown-item" to="/Registration">Register</Link></li>
+                                <li>
+                                    <hr className="dropdown-divider"/>
+                                </li>
+                                <li><a className="dropdown-item" href="#">Terms and Conditions</a></li>
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </nav>

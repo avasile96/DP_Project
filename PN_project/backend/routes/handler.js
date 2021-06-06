@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Schemas = require('../models/Schemas');
+const Schemas = require('../models/Schemas.js');
 
 /*
 router.get('/addUser', async (req, res) => {
@@ -56,5 +56,46 @@ router.post('/addTweet', async (req, res) => {
         res.end();
     }
 })
+
+router.post('/Registration', async (req, res) => {
+    const newUserName = req.body.username;
+    const password = req.body.pass;
+    const fieldThird = req.body.license;
+
+    const newUser = new Schemas.NewUser({
+        name: newUserName,
+        password: password,
+        thirdField: fieldThird
+    });
+
+    try {
+        await newUser.save( (err, newUserResults) => {
+            if (err) res.end('Error saving.');
+            res.redirect('/login');
+            res.end();
+        });
+    } catch (err) {
+        console.log(err)
+        res.redirect('/');
+        res.end('User not added.');
+    }
+});
+
+router.post('/login', async (req, res) => {
+    const userName = req.body.user;
+    const pass = req.body.password;
+    const userLogin = Schemas.LoginUser;
+
+    const loginUser = await userLogin.findOne({name:userName, password:pass}).exec((err, userData) => {
+        if (err) throw err;
+        if (userData != null) {
+            res.redirect('/dash');
+            res.end();
+        } else {
+            res.redirect('/Registration');
+            res.end();
+        }
+    });
+});
 
 module.exports = router;
