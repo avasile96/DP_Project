@@ -7,10 +7,10 @@ function Dash_comp() {
     return(
         <div className="main" id="about">
             <div className="main__container">
-                <div className="main__content">
+                <div className="main__container">
                     <Chart
-                        width={500}
-                        height={300}
+                        width={800}
+                        height={400}
                         chartType="ColumnChart"
                         loader={<div>Loading Chart</div>}
                         data={[
@@ -45,6 +45,7 @@ function Dash_comp() {
                             ['Velociraptor (swift robber)', 1.8]
                         ]}
                         options={{
+                            fontSize: 20,
                             title: 'Number of Patients by Age (and SpO2 count)',
                             legend: { position: 'none' },
                             backgroundColor: '#131313',
@@ -65,10 +66,10 @@ function Dash_comp() {
                         legendToggle
                     />
                 </div>
-                <div className="main__content">
+                <div className="main__container">
                     <Chart
-                        width={500}
-                        height={300}
+                        width={800}
+                        height={400}
                         chartType="ColumnChart"
                         loader={<div>Loading Chart</div>}
                         data={[
@@ -103,6 +104,7 @@ function Dash_comp() {
                             ['Velociraptor (swift robber)', 1.8]
                         ]}
                         options={{
+                            fontSize: 20,
                             title: 'Number of Patients by Age (and SpO2 count)',
                             legend: { position: 'none' },
                             backgroundColor: '#131313',
@@ -123,10 +125,10 @@ function Dash_comp() {
                         legendToggle
                     />
                 </div>
-                <div className="main__content">
+                <div className="main__container">
                     <Chart
-                        width={500}
-                        height={300}
+                        width={800}
+                        height={400}
                         chartType="ColumnChart"
                         loader={<div>Loading Chart</div>}
                         data={[
@@ -161,6 +163,7 @@ function Dash_comp() {
                             ['Velociraptor (swift robber)', 1.8]
                         ]}
                         options={{
+                            fontSize: 20,
                             title: 'Number of Patients by Age (and SpO2 count)',
                             legend: { position: 'none' },
                             backgroundColor: '#131313',
