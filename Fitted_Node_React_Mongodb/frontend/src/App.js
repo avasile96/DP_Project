@@ -10,6 +10,7 @@ import reg from "./pages/Registration";
 import login from "./pages/login";
 import abtUs from "./pages/about";
 import Dsh from "./pages/dash";
+import pat_reg from "./pages/pat_reg";
 
 class App extends Component {
     render() {
@@ -23,6 +24,7 @@ class App extends Component {
                     <Route exact path="/login" component ={login}/>
                     <Route exact path="/abtUs" component ={abtUs}/>
                     <Route exact path="/dash" component ={Dsh}/>
+                    <Route exact path="/pat_reg" component ={pat_reg}/>
                     Dashb
                     <Redirect to="/404"/>
                 </Switch>

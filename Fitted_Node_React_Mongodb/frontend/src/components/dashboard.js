@@ -1,6 +1,7 @@
 import Chart from "react-google-charts";
 
 import { Link } from "react-router-dom";
+import React from "react";
 
 function Dash_comp() {
     return(
@@ -68,7 +69,6 @@ function Dash_comp() {
                     <Chart
                         width={500}
                         height={300}
-
                         chartType="ColumnChart"
                         loader={<div>Loading Chart</div>}
                         data={[
@@ -185,7 +185,7 @@ function Dash_comp() {
                     <h2>Register a Patient</h2>
                     <p>This information is anonymous and in strict concordance with
                         doctor-patient confidentiality laws and regulations</p>
-                    <button className="main__btn"><a href="#">Register a Patient</a></button>
+                    <button className="main__btn"><Link to = "/pat_reg">Register a Patient</Link></button>
                 </div>
             </div>
         </div>
