@@ -16,9 +16,9 @@ function Form() {
                     <div className="col">
                         <h1 className="display-1">LOG IN</h1>
                         <div className="mb-3">
-                            <label htmlFor="exampleInputEmail1" className="form-label">User ID</label>
-                            <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"></input>
-                            <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
+                            <label htmlFor="text" className="form-label">User ID</label>
+                            <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"></input>
+                            <div id="emailHelp" className="form-text">We'll never share your information with anyone else.</div>
                         </div>
                         <div className="mb-3">
                             <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
