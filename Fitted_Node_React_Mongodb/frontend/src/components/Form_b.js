@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 function Form_b() {
     return(
@@ -27,12 +28,12 @@ function Form_b() {
                             <label htmlFor="exampleInputEmail1" className="form-label">Medical License Number</label>
                             <input type="email" className="form-control" id="exampleInputML" aria-describedby="emailHelp"></input>
                         </div>
-                        <button type="submit" className="btn btn-primary">Submit</button>
+                        <Link type="submit" className="btn btn-primary" to = "/login">
+                            Submit
+                        </Link>
                     </div>
                 </div>
             </div>
-
-
         </form>
     );
 }

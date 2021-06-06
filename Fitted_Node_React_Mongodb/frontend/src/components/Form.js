@@ -1,44 +1,34 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 function Form() {
     return(
-        <section>
-            <div className="form" id="form">
-                <div className="form__container">
-                    <div className="form__img--container">
-                        <div className="form__img--card"><i className="far fa-address-card fa-10x"></i></div>
+        <form className="form">
+            <div className="container">
+                <div className="row">
+                    <div className="col">
+                        <figure className= "figure">
+                            <div className="figure-img img-fluid rounded">
+                                <i className="far fa-address-card fa-10x"></i>
+                            </div>
+                        </figure>
                     </div>
-
-                    <div className="form__content">
-                        <h1>REGISTRATION</h1>
-                        <div>
-                            <form>
-                                <div>
-                                    <p>User ID</p>
-                                    <input className="form__input100" type="text" name="username"></input>
-                                    <span className="focus-input100" data-placeholder="Username"></span>
-                                </div>
-
-                                <div>
-                                    <p>Password</p>
-                                    <input className="form__input100" type="password" name="pass"></input>
-                                    <span className="focus-input100" data-placeholder="Password"></span>
-                                </div>
-
-                                <div>
-                                    <p>Medical License Number</p>
-                                    <input className="form__input100" type="text" name="MLN"></input>
-                                    <span className="focus-input100" data-placeholder="ML#"></span>
-                                </div>
-
-                                <a href="#" className="button">Register</a>
-
-                            </form>
+                    <div className="col">
+                        <h1 className="display-1">LOG IN</h1>
+                        <div className="mb-3">
+                            <label htmlFor="exampleInputEmail1" className="form-label">User ID</label>
+                            <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"></input>
+                            <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
                         </div>
+                        <div className="mb-3">
+                            <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
+                            <input type="password" className="form-control" id="exampleInputPassword1"></input>
+                        </div>
+                        <Link type="Log In" className="btn btn-primary" to = "/dash">Submit</Link>
                     </div>
                 </div>
             </div>
-        </section>
+        </form>
     );
 }
 

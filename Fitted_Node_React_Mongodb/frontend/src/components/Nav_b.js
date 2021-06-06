@@ -17,10 +17,10 @@ function Nav() {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0 ms-auto">
                         <li className="nav-item">
-                            <a className="nav-link active" aria-current="page" href="#">Home</a>
+                            <Link className="nav-link active" aria-current="page" to="/">Home</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">About Us</a>
+                            <Link className="nav-link" to="/abtUs">About Us</Link>
                         </li>
                     </ul>
                     <ul className="navbar-nav">
@@ -30,7 +30,7 @@ function Nav() {
                                 Join
                             </a>
                             <ul className="dropdown-menu dropdown-menu-end bg-dark" aria-labelledby="navbarDropdown">
-                                <li><a className="dropdown-item" href="#">Log In</a></li>
+                                <li><Link className="dropdown-item" to = "/login">Log In</Link></li>
                                 <li><Link className="dropdown-item" to="/Registration">Register</Link></li>
                                 <li>
                                     <hr className="dropdown-divider"></hr>

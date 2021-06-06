@@ -5,16 +5,16 @@ import { Link } from "react-router-dom";
 // Components
 import Nav_b from "../components/Nav_b";
 import Footer from "../components/Footer";
-import Hero_b from "../components/Hero_b";
+import Dash_comp from "../components/dashboard";
 
-const MainPage = () => {
+const Dsh = () => {
     return (
         <div className="App">
             <Nav_b />
-            <Hero_b />
+            <Dash_comp />
             <Footer />
         </div>
     );
 };
 
-export default MainPage;
+export default Dsh;
