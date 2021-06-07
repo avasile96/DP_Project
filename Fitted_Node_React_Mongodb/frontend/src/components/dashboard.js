@@ -125,7 +125,7 @@ function Dash_comp() {
                         legendToggle
                     />
                 </div>
-                <div className="main__container">
+                <div className="main__content">
                     <Chart
                         width={800}
                         height={400}
