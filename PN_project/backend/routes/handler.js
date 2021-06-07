@@ -93,16 +93,56 @@ router.post('/login', async (req, res) => {
     const pass = req.body.password;
     const userLogin = Schemas.LoginUser;
 
-    const loginUser = await userLogin.findOne({name:userName, password:pass}).exec((err, userData) => {
-        if (err) throw err;
-        if (userData != null) {
+    const loginUser = await userLogin.findOne({name:userName, password:pass}).exec();
+    const checkUser = await userLogin.findOne({name:userName}).exec();
+
+    try {
+        if (loginUser != null && checkUser != null) {
             res.redirect('/dash');
+            res.end();
+        } else if (loginUser === null && checkUser != null) {
+            res.redirect('/login');
             res.end();
         } else {
             res.redirect('/Registration');
             res.end();
         }
+    } catch (err) {
+        console.log(err)
+        res.redirect('/');
+        res.end('User not added.');
+    }
+});
+
+router.post('/pat_reg', async (req, res) => {
+    const patientName = req.body.patient;
+    const pressureBlood = req.body.blood;
+    const BMI = req.body.BMI;
+    const Patient = Schemas.Patient;
+
+    const checkPatient = await Patient.findOne({name:patientName}).exec();
+
+    const newPatient = new Schemas.NewPatient({
+        name: patientName,
+        bloodPressure: pressureBlood,
+        bodyMassIndex: BMI
     });
+    if (checkPatient === null){
+        try {
+            await newPatient.save((err, newUserResults) => {
+                if (err) res.end('Error saving.');
+                res.redirect('/dash');
+                res.end();
+            });
+        } catch (err) {
+            console.log(err)
+            res.redirect('/pat_reg');
+            res.end('User not added.');
+        }
+    } else {
+        res.redirect('/dash');
+        res.end();
+    }
 });
 
 module.exports = router;

@@ -11,18 +11,20 @@ import reg from "./Pages/Registration";
 import login from "./Pages/login";
 import abtUs from "./Pages/about";
 import Dsh from "./Pages/dash";
+import pat_reg from "./Pages/pat_reg";
 
 function App() {
     return (
         <Router>
             <Switch>
-                <Route exact path="/" component={MainPage}/>
-                <Route exect path="/404" component={NotFoundPage}/>
-                <Route exact path="/users" component ={UsersPage}/>
-                <Route exact path="/Registration" component ={reg}/>
-                <Route exact path="/login" component ={login}/>
-                <Route exact path="/abtUs" component ={abtUs}/>
-                <Route exact path="/dash" component ={Dsh}/>
+                <Route path="/" exact component={MainPage}/>
+                <Route path="/404" exect component={NotFoundPage}/>
+                <Route path="/users" exact component ={UsersPage}/>
+                <Route path="/Registration" exact component ={reg}/>
+                <Route path="/login" exact component ={login}/>
+                <Route path="/abtUs" exact component ={abtUs}/>
+                <Route path="/dash" exact component ={Dsh}/>
+                <Route path="/pat_reg" exact component ={pat_reg}/>
                 Dashb
                 <Redirect to="/404"/>
             </Switch>

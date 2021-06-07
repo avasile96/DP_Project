@@ -24,10 +24,25 @@ const userLogin = new Schema({
     password : {type:String, required:true}
 });
 
+const patientNew = new Schema({
+    name : {type:String, required:true},
+    bloodPressure : {type:String, required:true},
+    bodyMassIndex : {type:String, required:true},
+    entryDate: {type:Date, default:Date.now}
+});
+
+const patient = new Schema({
+    name : {type:String, required:true},
+    bloodPressure : {type:String, required:false},
+    bodyMassIndex : {type:String, required:false}
+});
+
 const Users = mongoose.model('user', userSchema, 'users');
 const Tweets = mongoose.model('tweets', tweetSchema, 'tweets');
 const NewUser = mongoose.model('users', newUserSchema, 'users');
-const LoginUser = mongoose.model('loginUser', userLogin, 'users')
-const mySchema = {'Users':Users, 'Tweets':Tweets, 'NewUser':NewUser, 'LoginUser':LoginUser};
+const LoginUser = mongoose.model('loginUser', userLogin, 'users');
+const NewPatient = mongoose.model('NewPatient', patientNew, 'patients');
+const Patient = mongoose.model('Patient', patient, 'patients');
+const mySchema = {'Users':Users, 'Tweets':Tweets, 'NewUser':NewUser, 'LoginUser':LoginUser, 'NewPatient':NewPatient, 'Patient':Patient};
 
 module.exports = mySchema;
