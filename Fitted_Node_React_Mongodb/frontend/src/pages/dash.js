@@ -5,8 +5,7 @@ import { Link } from "react-router-dom";
 // Components
 import Nav_b from "../components/Nav_b";
 import Footer from "../components/Footer";
-/*import Dash_comp from "../components/dashboard";*/
-import Dash_comp from "../components/dash_b";
+import Dash_comp from "../components/dashboard";
 
 const Dsh = () => {
     return (
