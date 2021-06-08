@@ -6,10 +6,9 @@ import React from "react";
 
 function Dash_comp() {
     return(
-        <div className="main">
-            <div className="container">
-                <div className="justify-content-md-center">
-                    <div className="col col-lg-6" class="chart">
+        <div className="form">
+                <div className="row">
+                    <div className="col-lg-6">
                         <Component
                             initialState={{dataLoadingStatus: 'loading', chartData: []}}
                             didMount={async function (component) {
@@ -46,6 +45,7 @@ function Dash_comp() {
                             {component => {
                                 return component.state.dataLoadingStatus === 'ready' ? (
                                     <Chart
+                                        height={400}
                                         chartType="LineChart"
                                         data={component.state.chartData}
                                         options={{
@@ -74,7 +74,7 @@ function Dash_comp() {
                             }}
                         </Component>
                     </div>
-                    <div className="col col-lg-6" className="chart">
+                    <div className="col-lg-6">
                         <Component
                             initialState={{dataLoadingStatus: 'loading', chartData: []}}
                             didMount={async function (component) {
@@ -111,6 +111,7 @@ function Dash_comp() {
                             {component => {
                                 return component.state.dataLoadingStatus === 'ready' ? (
                                     <Chart
+                                        height={400}
                                         chartType="LineChart"
                                         data={component.state.chartData}
                                         options={{
@@ -140,8 +141,8 @@ function Dash_comp() {
                         </Component>
                     </div>
                 </div>
-                <div className="row align-items-center">
-                    <div className="col col-lg-2" className="chart">
+                <div className="row justify-content-center">
+                    <div className="col-lg-6">
                         <Component
                             initialState={{dataLoadingStatus: 'loading', chartData: []}}
                             didMount={async function (component) {
@@ -178,6 +179,7 @@ function Dash_comp() {
                             {component => {
                                 return component.state.dataLoadingStatus === 'ready' ? (
                                     <Chart
+                                        height={400}
                                         chartType="LineChart"
                                         data={component.state.chartData}
                                         options={{
@@ -208,7 +210,7 @@ function Dash_comp() {
                     </div>
                 </div>
                 <div className="row justify-content-md-center">
-                    <div className="col">
+                    <div className="col-lg-6">
                         <div className="main__content">
                             <h2>Register a Patient</h2>
                             <p>This information is anonymous and in strict concordance with
@@ -217,7 +219,6 @@ function Dash_comp() {
                         </div>
                     </div>
                 </div>
-            </div>
         </div>
     );
 };
