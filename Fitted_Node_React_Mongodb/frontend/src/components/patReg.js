@@ -14,7 +14,7 @@ function Form_b() {
                         </figure>
                     </div>
                     <div className="col">
-                        <h1 className="display-1">REGISTRATION</h1>
+                        <h1 className="display-1">PATIENT REGISTRATION</h1>
                         <div className="mb-3">
                             <label htmlFor="text" className="form-label">Patient Name</label>
                             <input type="text" className="form-control" id="username" aria-describedby="emailHelp"></input>
