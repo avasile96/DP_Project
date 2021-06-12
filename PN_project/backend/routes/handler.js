@@ -145,4 +145,17 @@ router.post('/pat_reg', async (req, res) => {
     }
 });
 
+router.get('/dash', async (req, res) => {
+    const patients = Schemas.Patient;
+
+    const basePatients = await patients.find({}, (err, patientData) => {
+        if (err) throw err;
+        if (patientData) {
+            res.end(JSON.stringify(patientData));
+        } else {
+            res.end();
+        }
+    });
+});
+
 module.exports = router;
