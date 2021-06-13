@@ -1,5 +1,5 @@
 console.log('Hello TensorFlow');
-import * as tf from '@tensorflow/tfjs-node'
+/*import * as tf from '@tensorflow/tfjs-node'*/
 
 /**
  * Get the car data reduced to just the variables we are interested
@@ -131,7 +131,6 @@ const {inputs, labels} = tensorData;
 await trainModel(model, inputs, labels);
 console.log('Done Training');
 
-/*
 function testModel(model, inputData, normalizationData) {
     const {inputMax, inputMin, labelMin, labelMax} = normalizationData;
 
@@ -180,6 +179,3 @@ function testModel(model, inputData, normalizationData) {
 // original data
 testModel(model, data, tensorData);
 
-
-
-*/

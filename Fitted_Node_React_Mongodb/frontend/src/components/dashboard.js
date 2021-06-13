@@ -110,32 +110,15 @@ function Dash_comp() {
                         <Component
                             initialState={{dataLoadingStatus: 'loading', chartData: []}}
                             didMount={async function (component) {
-                                const COUNTRY_CODE = 'lb'
-                                const INDICATOR = 'DT.DOD.DECT.CD'
-                                const response = await fetch(
-                                    'https://api.worldbank.org/v2/countries/' +
-                                    COUNTRY_CODE +
-                                    '/indicators/' +
-                                    INDICATOR +
-                                    '?format=json',
-                                )
+                                const response = await fetch('/dash');
                                 const json = await response.json()
-                                const [metadata, data] = json
-                                {
-                                    /* console.log(data,metadata) */
-                                }
-                                const columns = [
-                                    {type: 'date', label: 'Year'},
-                                    {type: 'number', label: 'Debt'},
-                                ]
-                                let rows = []
-                                const nonNullData = data.filter(row => row.value !== null)
-                                for (let row of nonNullData) {
-                                    const {date, value} = row
-                                    rows.push([new Date(Date.parse(date)), value])
+                                const chartData = [['Patient\'s Name', 'Body Mass Index']]
+
+                                for (let i = 0; i < json.length; i += 1) {
+                                    chartData.push([json[i].name, json[i].__v])
                                 }
                                 component.setState({
-                                    chartData: [columns, ...rows],
+                                    chartData: chartData,
                                     dataLoadingStatus: 'ready',
                                 })
                             }}
@@ -144,10 +127,10 @@ function Dash_comp() {
                                 return component.state.dataLoadingStatus === 'ready' ? (
                                     <Chart
                                         height={400}
-                                        chartType="LineChart"
+                                        chartType="BarChart"
                                         data={component.state.chartData}
                                         options={{
-                                            title: 'Debt incurred over time.',
+                                            title: 'Patient\'s Body Mass Index.',
                                             fontSize: 20,
                                             backgroundColor: '#131313',
                                             colors: ['#efff1f'],
@@ -167,7 +150,7 @@ function Dash_comp() {
                                         rootProps={{'data-testid': '2'}}
                                     />
                                 ) : (
-                                    <div>Fetching data from API</div>
+                                    <div>Chingue a su madre el que vea esto</div>
                                 )
                             }}
                         </Component>
