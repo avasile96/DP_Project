@@ -31,11 +31,14 @@ function Dash_comp() {
                                         chartType="BarChart"
                                         data={component.state.chartData}
                                         options={{
-                                            title: 'Patient\'s Body Mass Index.',
+                                            title: 'Patient\'s Body Mass Index',
                                             fontSize: 20,
                                             backgroundColor: '#131313',
                                             colors: ['#efff1f'],
-                                            titleTextStyle: {color: '#efff1f'},
+                                            titleTextStyle: {color: '#efff1f',
+                                                            fontSize: 30},
+                                            legend: {textStyle: {color: '#efff1f'},
+                                                position: 'none' },
                                             hAxis:
                                                 {
                                                     baselineColor: '#131313',
@@ -51,7 +54,7 @@ function Dash_comp() {
                                         rootProps={{'data-testid': '2'}}
                                     />
                                 ) : (
-                                    <div>Chingue a su madre el que vea esto</div>
+                                    <div>Fetching data from database...</div>
                                 )
                             }}
                         </Component>
@@ -79,11 +82,15 @@ function Dash_comp() {
                                         chartType="BarChart"
                                         data={component.state.chartData}
                                         options={{
-                                            title: 'Patient\'s Blood Pressure.',
+                                            title: 'Patient\'s Blood Pressure',
                                             fontSize: 20,
                                             backgroundColor: '#131313',
                                             colors: ['#efff1f'],
-                                            titleTextStyle: {color: '#efff1f'},
+                                            titleTextStyle: {color: '#efff1f',
+                                                            fontSize: 30},
+                                            legend: {textStyle: {color: '#efff1f'},
+                                                position: 'none' },
+
                                             hAxis:
                                                 {
                                                     baselineColor: '#131313',
@@ -99,7 +106,7 @@ function Dash_comp() {
                                         rootProps={{'data-testid': '2'}}
                                     />
                                 ) : (
-                                    <div>Fetching data from data base.</div>
+                                    <div>Fetching data from database...</div>
                                 )
                             }}
                         </Component>
@@ -112,7 +119,7 @@ function Dash_comp() {
                             didMount={async function (component) {
                                 const response = await fetch('/dash');
                                 const json = await response.json()
-                                const chartData = [['Patient\'s Name', 'Body Mass Index']]
+                                const chartData = [['Patient\'s Name', 'Risk']]
 
                                 for (let i = 0; i < json.length; i += 1) {
                                     chartData.push([json[i].name, json[i].__v])
@@ -130,15 +137,19 @@ function Dash_comp() {
                                         chartType="BarChart"
                                         data={component.state.chartData}
                                         options={{
-                                            title: 'Patient\'s Body Mass Index.',
+                                            title: 'Patient\'s Cardiac Arrest Risk',
                                             fontSize: 20,
                                             backgroundColor: '#131313',
                                             colors: ['#efff1f'],
-                                            titleTextStyle: {color: '#efff1f'},
+                                            titleTextStyle: {color: '#efff1f',
+                                                            fontSize: 30},
+                                            legend: {textStyle: {color: '#efff1f'},
+                                                position: 'none' },
                                             hAxis:
                                                 {
                                                     baselineColor: '#131313',
-                                                    textStyle: {color: '#efff1f'}
+                                                    textStyle: {color: '#efff1f'},
+                                                    format: 'percent'
                                                 },
                                             vAxis:
                                                 {
@@ -150,7 +161,7 @@ function Dash_comp() {
                                         rootProps={{'data-testid': '2'}}
                                     />
                                 ) : (
-                                    <div>Chingue a su madre el que vea esto</div>
+                                    <div>Waiting for API...</div>
                                 )
                             }}
                         </Component>

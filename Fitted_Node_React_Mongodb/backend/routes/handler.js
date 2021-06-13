@@ -154,11 +154,17 @@ router.get('/dash', async (req, res) => {
 
             // Generate some synthetic data for training.
             const xs = tf.tensor2d([
-                [1, 2],
-                [5, 6],
-                [9, 10],
+                [130, 10],
+                [150, 20],
+                [180, 35],
+                [130, 10],
+                [150, 20],
+                [180, 35],
+                [130, 10],
+                [150, 20],
+                [180, 35],
             ]);
-            const ys = tf.tensor1d([0, 1, 2]);
+            const ys = tf.tensor1d([10, 50, 100,10, 50, 100,10, 50, 100]);
             /*console.log(xs.shape.slice(1));*/
             // Generate model
             const model = tf.sequential();
