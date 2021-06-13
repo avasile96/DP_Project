@@ -4,27 +4,8 @@ import { Link } from "react-router-dom";
 import React, {useEffect, useState} from "react";
 
 function Dash_comp() {
-    useEffect(() =>{
-        fetchItems();
-    }, []);
-
-    const [items, setItems] = useState([]);
-
-    const fetchItems = async () => {
-        const data = await fetch('/dash');
-        const items = await data.json();
-        setItems(items);
-    };
-
     return(
         <section>
-            {items.map(item => (
-                <div className="row padding">
-                    <div className="alert alert-info rounded-pill" role="alert">
-                        <i className="fa fa-user mr-2"/><i>{item.name} have: ({item.bloodPressure}), {item.bodyMassIndex}</i>
-                    </div>
-                </div>
-            ))}
             <div className="form">
                 <div className="row">
                     <div className="col-lg-6">
@@ -33,18 +14,12 @@ function Dash_comp() {
                             didMount={async function (component) {
                                 const response = await fetch('/dash');
                                 const json = await response.json()
-                                const [metadata, data] = json
-                                {
-                                    console.log(data)
+                                const chartData = [['Patient\'s Name', 'Body Mass Index']]
+                                for (let i = 0; i < json.length; i += 1) {
+                                    chartData.push([json[i].name, json[i].bodyMassIndex])
                                 }
-                                const columns = [
-                                    {type: 'string', label: 'name'},
-                                ]
-                                const rows = [
-                                    {type: 'string', label: 'bodyMassIndex'},
-                                ]
                                 component.setState({
-                                    chartData: [columns, ...rows],
+                                    chartData: chartData,
                                     dataLoadingStatus: 'ready',
                                 })
                             }}
@@ -56,7 +31,7 @@ function Dash_comp() {
                                         chartType="BarChart"
                                         data={component.state.chartData}
                                         options={{
-                                            title: 'Debt incurred over time.',
+                                            title: 'Patient\'s Body Mass Index.',
                                             fontSize: 20,
                                             backgroundColor: '#131313',
                                             colors: ['#efff1f'],
@@ -76,7 +51,7 @@ function Dash_comp() {
                                         rootProps={{'data-testid': '2'}}
                                     />
                                 ) : (
-                                    <div>Fetching data from API</div>
+                                    <div>Chingue a su madre el que vea esto</div>
                                 )
                             }}
                         </Component>
@@ -85,32 +60,14 @@ function Dash_comp() {
                         <Component
                             initialState={{dataLoadingStatus: 'loading', chartData: []}}
                             didMount={async function (component) {
-                                const COUNTRY_CODE = 'lb'
-                                const INDICATOR = 'DT.DOD.DECT.CD'
-                                const response = await fetch(
-                                    'https://api.worldbank.org/v2/countries/' +
-                                    COUNTRY_CODE +
-                                    '/indicators/' +
-                                    INDICATOR +
-                                    '?format=json',
-                                )
+                                const response = await fetch('/dash');
                                 const json = await response.json()
-                                const [metadata, data] = json
-                                {
-                                    /* console.log(data,metadata) */
-                                }
-                                const columns = [
-                                    {type: 'date', label: 'Year'},
-                                    {type: 'number', label: 'Debt'},
-                                ]
-                                let rows = []
-                                const nonNullData = data.filter(row => row.value !== null)
-                                for (let row of nonNullData) {
-                                    const {date, value} = row
-                                    rows.push([new Date(Date.parse(date)), value])
+                                const chartData = [['Patient\'s Name', 'Blood Pressure']]
+                                for (let i = 0; i < json.length; i += 1) {
+                                    chartData.push([json[i].name, json[i].bloodPressure])
                                 }
                                 component.setState({
-                                    chartData: [columns, ...rows],
+                                    chartData: chartData,
                                     dataLoadingStatus: 'ready',
                                 })
                             }}
@@ -122,7 +79,7 @@ function Dash_comp() {
                                         chartType="BarChart"
                                         data={component.state.chartData}
                                         options={{
-                                            title: 'Debt incurred over time.',
+                                            title: 'Patient\'s Blood Pressure.',
                                             fontSize: 20,
                                             backgroundColor: '#131313',
                                             colors: ['#efff1f'],
@@ -142,7 +99,7 @@ function Dash_comp() {
                                         rootProps={{'data-testid': '2'}}
                                     />
                                 ) : (
-                                    <div>Fetching data from API</div>
+                                    <div>Fetching data from data base.</div>
                                 )
                             }}
                         </Component>

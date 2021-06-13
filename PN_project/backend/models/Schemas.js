@@ -26,15 +26,15 @@ const userLogin = new Schema({
 
 const patientNew = new Schema({
     name : {type:String, required:true},
-    bloodPressure : {type:String, required:true},
-    bodyMassIndex : {type:String, required:true},
+    bloodPressure : {type:Number, required:true},
+    bodyMassIndex : {type:Number, required:true},
     entryDate: {type:Date, default:Date.now}
 });
 
 const patient = new Schema({
     name : {type:String, required:true},
-    bloodPressure : {type:String, required:false},
-    bodyMassIndex : {type:String, required:false}
+    bloodPressure : {type:Number, required:false},
+    bodyMassIndex : {type:Number, required:false}
 });
 
 const Users = mongoose.model('user', userSchema, 'users');
