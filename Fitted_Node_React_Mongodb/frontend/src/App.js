@@ -20,12 +20,11 @@ class App extends Component {
                     <Route exact path="/" component={MainPage}/>
                     <Route exect path="/404" component={NotFoundPage}/>
                     <Route exact path="/users" component ={UsersPage}/>
-                    <Route exact path="/registration" component ={reg}/>
+                    <Route exact path="/Registration" component ={reg}/>
                     <Route exact path="/login" component ={login}/>
                     <Route exact path="/abtUs" component ={abtUs}/>
                     <Route exact path="/dash" component ={Dsh}/>
                     <Route exact path="/pat_reg" component ={pat_reg}/>
-                    Dashb
                     <Redirect to="/404"/>
                 </Switch>
             </Router>
