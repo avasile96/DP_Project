@@ -1,22 +1,47 @@
 import React from 'react'; // ES6 js
-import {Link} from 'react-router-dom';
+import alex from '../dunno.jpg';
+import manuel from '../manuel.jpg';
+import alexandra from '../alexandra.svg';
 
-//Linked Pages
 
 function Abt() {
     return(
         <div className="main" id="about">
             <div className="main__container">
                 <div className="main__img--container">
-                    <div className="main__img--card"><i className="fas fa-layer-group"></i></div>
+                    <div className="main__img--card"><img src={alex} alt="alex" /></div>
                 </div>
                 <div className="main__content">
-                    <h1>How it works?</h1>
-                    <h2>Share medical data anonymously</h2>
-                    <p>And help save lives by providing teams of researchers all over
-                        the world with enough data to study complex diseases</p>
-                    <button className="main__btn"><a href="#">Find out more!</a></button>
+                    <h2>Alexandru Vasile</h2>
+                    <p>An explorer, a tinkerer and a team player, always in search of good questions and good answers.
+                       Everything that led me up to here has been a wild journey.</p>
                 </div>
+
+                <div className="main__img--container">
+                    <div className="main__img--card"><img src={manuel} alt="manuel" /></div>
+                </div>
+                <div className="main__content">
+                    <h2>Manuel Ojeda </h2>
+                    <p>The Aztec armed forces were typically composed of "those who have gone to war" who possessed
+                        only basic military training, and a smaller but still considerable number of
+                        professional warriors belonging to the nobility, Manuel is one of them.</p>
+                </div>
+
+                <div className="main__img--container">
+                    <div className="main__img--card"><img src={alexandra} alt="alexandra" /></div>
+                </div>
+                <div className="main__content">
+                    <h2>Alexandra Albu</h2>
+                    <p>Isten, áldd meg a magyart
+                        Jó kedvvel, bőséggel,
+                        Nyújts feléje védő kart,
+                        Ha küzd ellenséggel;
+                        Bal sors akit régen tép,
+                        Hozz rá víg esztendőt,
+                        Megbűnhődte már e nép
+                        A múltat s jövendőt!</p>
+                </div>
+
             </div>
         </div>
     );

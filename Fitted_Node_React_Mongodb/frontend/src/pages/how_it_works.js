@@ -2,17 +2,17 @@ import React from "react"
 
 // Components
 import Footer from '../components/Footer';
-import Abt from '../components/abtUs';
+import Howorks from '../components/how_works';
 import Nav_b from '../components/Nav_b';
 
-const aboutus = () => {
+const how_w = () => {
     return (
         <div className="App">
             <Nav_b />
-            <Abt />
+            <Howorks />
             <Footer />
         </div>
     )
 }
 
-export default aboutus;
+export default how_w;

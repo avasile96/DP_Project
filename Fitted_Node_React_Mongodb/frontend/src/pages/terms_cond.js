@@ -2,17 +2,17 @@ import React from "react"
 
 // Components
 import Footer from '../components/Footer';
-import Abt from '../components/abtUs';
+import Tandc from '../components/t_and_c';
 import Nav_b from '../components/Nav_b';
 
-const aboutus = () => {
+const t_and_cond = () => {
     return (
         <div className="App">
             <Nav_b />
-            <Abt />
+            <Tandc />
             <Footer />
         </div>
     )
 }
 
-export default aboutus;
+export default t_and_cond;

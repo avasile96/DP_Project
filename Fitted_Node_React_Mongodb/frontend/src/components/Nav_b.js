@@ -35,7 +35,7 @@ function Nav() {
                                 <li>
                                     <hr className="dropdown-divider"></hr>
                                 </li>
-                                <li><a className="dropdown-item" href="#">Terms and Conditions</a></li>
+                                <li><Link className="dropdown-item" to="/terms_cond">Terms and Conditions</Link></li>
                             </ul>
                         </li>
                     </ul>

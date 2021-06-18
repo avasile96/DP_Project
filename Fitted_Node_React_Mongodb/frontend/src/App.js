@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import './App.css';
-import {BrowserRouter as Router, Switch, Route, Link, Redirect} from 'react-router-dom';
+import {BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom';
 
 //Pages
 import MainPage from "./pages";
@@ -11,6 +11,8 @@ import login from "./pages/login";
 import abtUs from "./pages/about";
 import Dsh from "./pages/dash";
 import pat_reg from "./pages/pat_reg";
+import how_w from "./pages/how_it_works";
+import t_and_cond from "./pages/terms_cond";
 
 class App extends Component {
     render() {
@@ -25,6 +27,9 @@ class App extends Component {
                     <Route exact path="/abtUs" component ={abtUs}/>
                     <Route exact path="/dash" component ={Dsh}/>
                     <Route exact path="/pat_reg" component ={pat_reg}/>
+                    <Route exact path="/terms_cond" component ={t_and_cond}/>
+                    <Route exact path="/pat_reg" component ={pat_reg}/>
+                    <Route exact path="/how_it_works" component ={how_w}/>
                     <Redirect to="/404"/>
                 </Switch>
             </Router>
