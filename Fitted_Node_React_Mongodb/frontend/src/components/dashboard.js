@@ -175,6 +175,11 @@ function Dash_comp() {
                                 doctor-patient confidentiality laws and regulations</p>
                             <button className="main__btn"><Link to = "/pat_reg">Register a Patient</Link></button>
                         </div>
+
+                        <div className="main__content">
+                            <button className="main__btn"><Link to = "/pat_del">Delete a Patient</Link></button>
+                        </div>
+
                     </div>
                 </div>
             </div>

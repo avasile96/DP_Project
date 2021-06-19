@@ -190,4 +190,38 @@ router.get('/dash', async (req, res) => {
     });
 });
 
+router.post('/pat_del', async (req, res) => {
+    const patientName = req.body.patient;
+    const Patient = Schemas.Patient;
+    // const deletePatient = await Patient.deleteOne({name:patientName}).exec()
+
+    try {
+        await Patient.deleteOne({name:patientName}, (err, patientDeleted) => {
+            if (err) res.end('Error deleting.');
+            res.redirect('/dash');
+            res.end();
+        });
+    } catch (err) {
+        console.log(err);
+        res.redirect('/dash');
+        res.end();
+    }
+});
+
+router.post('/pat_up', async (req, res) => {
+    const patientName = req.body.patient;
+    const Patient = Schemas.Patient;
+    // const deletePatient = await Patient.deleteOne({name:patientName}).exec()
+
+    try {
+        await Patient.updateOne({name:patientName}, (err, patientDeleted) => {
+
+            });
+    } catch (err) {
+        console.log(err);
+        res.redirect('/dash');
+        res.end();
+    }
+});
+
 module.exports = router;

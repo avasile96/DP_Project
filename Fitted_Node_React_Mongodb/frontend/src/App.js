@@ -13,6 +13,7 @@ import Dsh from "./pages/dash";
 import pat_reg from "./pages/pat_reg";
 import how_w from "./pages/how_it_works";
 import t_and_cond from "./pages/terms_cond";
+import pat_del from "./pages/pat_del";
 
 class App extends Component {
     render() {
@@ -30,6 +31,8 @@ class App extends Component {
                     <Route exact path="/terms_cond" component ={t_and_cond}/>
                     <Route exact path="/pat_reg" component ={pat_reg}/>
                     <Route exact path="/how_it_works" component ={how_w}/>
+                    <Route exact path="/pat_del" component ={pat_del}/>
+
                     <Redirect to="/404"/>
                 </Switch>
             </Router>
