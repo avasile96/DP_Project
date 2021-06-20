@@ -1,0 +1,5 @@
+How to make it work?
+
+cd this_directory_path
+npm install
+npm start
