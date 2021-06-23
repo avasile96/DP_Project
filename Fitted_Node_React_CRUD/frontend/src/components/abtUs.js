@@ -1,7 +1,7 @@
 import React from 'react'; // ES6 js
 import alex from '../dunno.jpg';
-import manuel from '../manuel.jpg';
-import alexandra from '../alexandra.svg';
+import manuel from '../Manuel.jpeg';
+import alexandra from '../alexandra.jpg';
 
 
 function Abt() {
