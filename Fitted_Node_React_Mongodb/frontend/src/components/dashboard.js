@@ -36,7 +36,7 @@ function Dash_comp() {
                                             backgroundColor: '#131313',
                                             colors: ['#efff1f'],
                                             titleTextStyle: {color: '#efff1f',
-                                                            fontSize: 30},
+                                                fontSize: 30},
                                             legend: {textStyle: {color: '#efff1f'},
                                                 position: 'none' },
                                             hAxis:
@@ -87,7 +87,7 @@ function Dash_comp() {
                                             backgroundColor: '#131313',
                                             colors: ['#efff1f'],
                                             titleTextStyle: {color: '#efff1f',
-                                                            fontSize: 30},
+                                                fontSize: 30},
                                             legend: {textStyle: {color: '#efff1f'},
                                                 position: 'none' },
 
@@ -142,7 +142,7 @@ function Dash_comp() {
                                             backgroundColor: '#131313',
                                             colors: ['#efff1f'],
                                             titleTextStyle: {color: '#efff1f',
-                                                            fontSize: 30},
+                                                fontSize: 30},
                                             legend: {textStyle: {color: '#efff1f'},
                                                 position: 'none' },
                                             hAxis:
@@ -180,6 +180,9 @@ function Dash_comp() {
                             <button className="main__btn"><Link to = "/pat_del">Delete a Patient</Link></button>
                         </div>
 
+                        <div className="main__content">
+                            <button className="main__btn"><Link to = "/pat_up">Update a Patient's Data</Link></button>
+                        </div>
                     </div>
                 </div>
             </div>

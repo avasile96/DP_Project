@@ -14,6 +14,7 @@ import pat_reg from "./pages/pat_reg";
 import how_w from "./pages/how_it_works";
 import t_and_cond from "./pages/terms_cond";
 import pat_del from "./pages/pat_del";
+import pat_up from "./pages/pat_up";
 
 class App extends Component {
     render() {
@@ -32,6 +33,7 @@ class App extends Component {
                     <Route exact path="/pat_reg" component ={pat_reg}/>
                     <Route exact path="/how_it_works" component ={how_w}/>
                     <Route exact path="/pat_del" component ={pat_del}/>
+                    <Route exact path="/pat_up" component ={pat_up}/>
 
                     <Redirect to="/404"/>
                 </Switch>
@@ -41,4 +43,3 @@ class App extends Component {
 }
 
 export default App;
-

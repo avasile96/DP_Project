@@ -46,7 +46,7 @@ router.post('/addTweet', async (req, res) => {
 
     try {
         await newTweet.save((err, newTweetResults) => {
-            if (err) res.end('Error Saving.');
+            if (err) res.end('Invalid Input.');
             res.redirect('/tweets');
             res.end();
         });
@@ -73,7 +73,7 @@ router.post('/Registration', async (req, res) => {
     if (checkUser === null) {
         try {
             await newUser.save((err, newUserResults) => {
-                if (err) res.end('Error saving.');
+                if (err) res.end('Invalid Input.');
                 res.redirect('/login');
                 res.end();
             });
@@ -130,7 +130,7 @@ router.post('/pat_reg', async (req, res) => {
     if (checkPatient === null){
         try {
             await newPatient.save((err, newUserResults) => {
-                if (err) res.end('Error saving.');
+                if (err) res.end('Invalid Input.');
                 res.redirect('/dash');
                 res.end();
             });
@@ -207,19 +207,58 @@ router.post('/pat_del', async (req, res) => {
         res.end();
     }
 });
+//
+// router.post('/pat_up', async (req, res) => {
+//     const patientName = req.body.patient;
+//     const Patient = Schemas.Patient;
+//     // const deletePatient = await Patient.deleteOne({name:patientName}).exec()
+//
+//     try {
+//         await Patient.updateOne({name:patientName}, (err, patientDeleted) => {
+//
+//             });
+//     } catch (err) {
+//         console.log(err);
+//         res.redirect('/dash');
+//         res.end();
+//     }
+// });
+
 
 router.post('/pat_up', async (req, res) => {
     const patientName = req.body.patient;
+    const pressureBlood = req.body.blood;
+    const BMI = req.body.BMI;
     const Patient = Schemas.Patient;
-    // const deletePatient = await Patient.deleteOne({name:patientName}).exec()
 
-    try {
-        await Patient.updateOne({name:patientName}, (err, patientDeleted) => {
+    const checkPatient = await Patient.findOne({name:patientName}).exec();
 
-            });
-    } catch (err) {
-        console.log(err);
-        res.redirect('/dash');
+    // const newPatient = new Schemas.NewPatient({
+    //     name: patientName,
+    //     bloodPressure: pressureBlood,
+    //     bodyMassIndex: BMI
+    // });
+    if (checkPatient !== null) {
+        try {
+            await Patient.updateOne(
+                { name: patientName },
+                { $set:
+                        {
+                            bloodPressure: pressureBlood,
+                            bodyMassIndex: BMI,
+                        }
+                }, (err, patientDeleted) => {
+                    if (err) res.end('Error updating.');
+                    res.redirect('/dash');
+                    res.end();
+                });
+        } catch (err) {
+            console.log(err)
+            res.redirect('/dash');
+            res.end('User not updated.');
+        }
+    } else {
+        res.redirect('/pat_reg');
         res.end();
     }
 });
