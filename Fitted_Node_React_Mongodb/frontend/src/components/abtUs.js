@@ -1,7 +1,7 @@
 import React from 'react'; // ES6 js
 import alex from '../dunno.jpg';
 import manuel from '../manuel.jpg';
-import alexandra from '../alexandra.svg';
+
 
 
 function Abt() {
@@ -28,7 +28,7 @@ function Abt() {
                 </div>
 
                 <div className="main__img--container">
-                    <div className="main__img--card"><img src={alexandra} alt="alexandra" /></div>
+                    <div className="main__img--card"><img src={manuel} alt="alexandra" /></div>
                 </div>
                 <div className="main__content">
                     <h2>Alexandra Albu</h2>
