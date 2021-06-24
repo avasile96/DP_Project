@@ -168,12 +168,14 @@ router.get('/dash', async (req, res) => {
             /*console.log(xs.shape.slice(1));*/
             // Generate model
             const model = tf.sequential();
-            model.add(tf.layers.dense({ units: 4, inputShape: xs.shape.slice(1) }));
-            model.add(tf.layers.dense({ units: 1}));
+            model.add(tf.layers.dense({ units: 4, inputShape: xs.shape.slice(1), activation: "relu", kernelInitializer: "heUniform"}));
+            model.add(tf.layers.dense({ units: 4, activation: "relu", kernelInitializer: "heUniform"}));
+            model.add(tf.layers.dense({ units: 4, activation: "relu", kernelInitializer: "heUniform"}));
+            model.add(tf.layers.dense({ units: 1, activation: "relu", kernelInitializer: "heUniform"}));
             model.compile({ optimizer: 'adam', loss: 'meanSquaredError', metrics: ['accuracy'] });
 
             // Train the model using the fake data.
-            model.fit(xs, ys).then(() => {
+            model.fit(xs, ys, {epochs: 100}).then(() => {
                 for (let i = 0; i < patientData.length; i += 1) {
                     // Use the model to do inference on a data point the model hasn't seen before:
                     const pred = model.predict(tf.tensor2d([patientData[i].bloodPressure, patientData[i].bodyMassIndex], [1,2]));
