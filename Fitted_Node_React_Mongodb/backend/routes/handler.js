@@ -175,7 +175,7 @@ router.get('/dash', async (req, res) => {
             model.compile({ optimizer: 'adam', loss: 'meanSquaredError', metrics: ['accuracy'] });
 
             // Train the model using the fake data.
-            model.fit(xs, ys, {epochs: 100}).then(() => {
+            model.fit(xs, ys, {epochs: 200}).then(() => {
                 for (let i = 0; i < patientData.length; i += 1) {
                     // Use the model to do inference on a data point the model hasn't seen before:
                     const pred = model.predict(tf.tensor2d([patientData[i].bloodPressure, patientData[i].bodyMassIndex], [1,2]));
