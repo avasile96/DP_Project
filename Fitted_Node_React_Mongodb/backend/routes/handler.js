@@ -148,7 +148,7 @@ router.post('/pat_reg', async (req, res) => {
 router.get('/dash', async (req, res) => {
     const patients = Schemas.Patient;
 
-    const basePatients = await patients.find({}, (err, patientData) => {
+    const basePatients = await patients.find({}, async(err, patientData) => {
         if (err) throw err;
         if (patientData) {
 
@@ -169,13 +169,14 @@ router.get('/dash', async (req, res) => {
             // Generate model
             const model = tf.sequential();
             model.add(tf.layers.dense({ units: 4, inputShape: xs.shape.slice(1), activation: "relu", kernelInitializer: "heUniform"}));
+            model.add(tf.layers.batchNormalization ());
             model.add(tf.layers.dense({ units: 4, activation: "relu", kernelInitializer: "heUniform"}));
-            model.add(tf.layers.dense({ units: 4, activation: "relu", kernelInitializer: "heUniform"}));
+            model.add(tf.layers.batchNormalization ());
             model.add(tf.layers.dense({ units: 1, activation: "relu", kernelInitializer: "heUniform"}));
             model.compile({ optimizer: 'adam', loss: 'meanSquaredError', metrics: ['accuracy'] });
 
             // Train the model using the fake data.
-            model.fit(xs, ys, {epochs: 200}).then(() => {
+            await model.fit(xs, ys, {epochs: 200}).then(() => {
                 for (let i = 0; i < patientData.length; i += 1) {
                     // Use the model to do inference on a data point the model hasn't seen before:
                     const pred = model.predict(tf.tensor2d([patientData[i].bloodPressure, patientData[i].bodyMassIndex], [1,2]));
